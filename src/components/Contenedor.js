@@ -28,21 +28,15 @@ export class Contenedor extends Component {
           this.setState({
             historiaActual: historia,
           });
+        } if((this.state.opcionesSeleccionadas.length === this.props.limiteHistorias-1)){
+          alert("FIN")
         }        
       }      
     )
-    this.finalizar();
-    
-  }
+ }
 
   obtenerSiguienteHistoria(opcion) {
     return data.find((d) => d.id === (this.state.opcionesSeleccionadas.length + 1 + opcion.toLowerCase()));
-  }
-
-  finalizar(){
-    if(this.state.opcionesSeleccionadas.length === this.props.limiteHistorias-1){
-      alert("FIN")
-    }
   }
 
   render() {
