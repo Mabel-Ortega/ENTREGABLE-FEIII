@@ -15,6 +15,7 @@ export class Contenedor extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  //Aplico el método del ciclo de vida
   componentDidMount(){
     alert("¡Bienvenido al Juego!")
   }
@@ -28,7 +29,12 @@ export class Contenedor extends Component {
           this.setState({
             historiaActual: historia,
           });
-        } if((this.state.opcionesSeleccionadas.length === this.props.limiteHistorias-1)){
+        } if((this.state.opcionesSeleccionadas.length === this.props.limiteHistorias)){
+          this.setState({
+            historiaActual: data[0],
+            opcionesSeleccionadas:[]
+          
+          })
           alert("FIN")
         }        
       }      
